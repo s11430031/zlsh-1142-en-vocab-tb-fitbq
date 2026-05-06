@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocab Challenge | 單字複習挑戰</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+        }
+
+        .neon-text-blue { text-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
+
+        input:focus {
+            outline: none;
+            border-color: #38bdf8;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .shake { animation: shake 0.2s ease-in-out 0s 2; }
+        
+        .hidden-element { display: none !important; }
+
+        #fav-list::-webkit-scrollbar { width: 6px; }
+        #fav-list::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div id="game-container" class="w-full max-w-2xl space-y-6">
+        
+        <div id="main-card" class="glass-card p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <div id="feedback" class="absolute top-4 right-8 font-bold text-lg hidden-element"></div>
+
+            <div id="question-box" class="space-y-8">
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <div class="text-sky-400 font-bold text-sm uppercase tracking-widest flex items-center gap-2">
+                            <span class="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></span>
+                            Current Challenge
+                        </div>
+                        <button id="favorite-btn" onclick="toggleFavorite()" class="flex items-center gap-1.5 text-slate-500 hover:text-yellow-400 transition-all group">
+                            <span class="text-[10px] font-bold uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">收藏此題</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="fav-icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.382-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <p id="sentence-display" class="text-xl md:text-2xl leading-relaxed font-semibold text-slate-100">
+                        正在準備連線至資料庫...
+                    </p>
+                    
+                    <div id="correct-answer-display" class="hidden-element p-4 bg-rose-500/10 border border-rose-500/20 rounded-xl">
+                        <p class="text-rose-400 text-sm font-bold uppercase mb-1">Correct Answer:</p>
+                        <p id="correct-word" class="text-2xl text-white font-black tracking-wide"></p>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <input type="text" id="answer-input" autocomplete="off" placeholder="在此輸入單字..." 
+                        class="w-full bg-slate-900/50 border-2 border-slate-700 p-4 rounded-xl text-lg transition-all text-center">
+                    
+                    <div id="input-hint" class="text-center mt-4 text-slate-500 text-sm">按下 Enter 提交</div>
+                    
+                    <button id="next-btn" onclick="handleNextClick()" class="hidden-element w-full mt-4 bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 rounded-xl transition-all shadow-lg">
+                        繼續下一題
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card p-6">
+            <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-.181.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                My Collection (複習清單)
+            </h3>
+            <div id="fav-list" class="max-h-40 overflow-y-auto space-y-2 pr-2">
+                <p class="text-slate-500 text-xs italic text-center py-4">清單將在換題時更新...</p>
+            </div>
+        </div>
+        
+        </div>
+
+    <script>
+        let vocabData = [];
+        let favorites = JSON.parse(localStorage.getItem('vocab_favs')) || [];
+        let currentIndex = 0;
+        let isWaitingNext = false;
+
+        const sentenceDisplay = document.getElementById('sentence-display');
+        const answerInput = document.getElementById('answer-input');
+        const mainCard = document.getElementById('main-card');
+        const feedback = document.getElementById('feedback');
+        const correctAnswerDisplay = document.getElementById('correct-answer-display');
+        const correctWord = document.getElementById('correct-word');
+        const nextBtn = document.getElementById('next-btn');
+        const inputHint = document.getElementById('input-hint');
+        const favIcon = document.getElementById('fav-icon');
+        const favListContainer = document.getElementById('fav-list');
+
+        async function loadData() {
+            try {
+                const response = await fetch('example.json');
+                if (!response.ok) throw new Error('無法讀取');
+                vocabData = await response.json();
+                vocabData.sort(() => Math.random() - 0.5);
+                return true; 
+            } catch (error) {
+                sentenceDisplay.innerHTML = `<span class="text-rose-400">載入失敗 (請確認 example.json 存在)</span>`;
+                return false;
+            }
+        }
+
+        async function initGame() {
+            currentIndex = 0;
+            isWaitingNext = false;
+            
+            resetQuestionUI();
+            updateFavListUI(); 
+            
+            const isLoaded = await loadData();
+            if (isLoaded) {
+                showQuestion();
+            }
+        }
+
+        function resetQuestionUI() {
+            answerInput.value = '';
+            answerInput.classList.remove('hidden-element');
+            inputHint.classList.remove('hidden-element');
+            correctAnswerDisplay.classList.add('hidden-element');
+            nextBtn.classList.add('hidden-element');
+            isWaitingNext = false;
+        }
+
+        function showQuestion() {
+            if (vocabData.length === 0) return;
+            const item = vocabData[currentIndex];
+            sentenceDisplay.innerText = item.sentence;
+            
+            const isFav = favorites.some(f => f.sentence === item.sentence);
+            updateStarUI(isFav);
+            answerInput.focus();
+        }
+
+        function updateStarUI(isFav) {
+            favIcon.setAttribute('fill', isFav ? 'currentColor' : 'none');
+            favIcon.classList.toggle('text-yellow-400', isFav);
+        }
+
+        function checkAnswer() {
+            if (vocabData.length === 0 || isWaitingNext) return;
+            const userAnswer = answerInput.value.trim().toLowerCase();
+            const correctObj = vocabData[currentIndex];
+
+            if (userAnswer === correctObj.answer.toLowerCase()) {
+                showFeedback('Correct!', 'text-sky-400 neon-text-blue');
+                
+                updateFavListUI(); 
+                currentIndex = (currentIndex + 1) % vocabData.length;
+                setTimeout(showQuestion, 400);
+                answerInput.value = '';
+            } else {
+                // 答錯僅震動並顯示答案，不再扣 HP
+                mainCard.classList.add('shake');
+                setTimeout(() => mainCard.classList.remove('shake'), 400);
+
+                isWaitingNext = true;
+                correctWord.innerText = correctObj.answer;
+                correctAnswerDisplay.classList.remove('hidden-element');
+                answerInput.classList.add('hidden-element');
+                inputHint.classList.add('hidden-element');
+                nextBtn.classList.remove('hidden-element');
+                nextBtn.focus();
+            }
+        }
+
+        function handleNextClick() {
+            updateFavListUI();
+            resetQuestionUI();
+            currentIndex = (currentIndex + 1) % vocabData.length;
+            showQuestion();
+        }
+
+        function toggleFavorite() {
+            const item = vocabData[currentIndex];
+            const idx = favorites.findIndex(f => f.sentence === item.sentence);
+            
+            if (idx > -1) {
+                favorites.splice(idx, 1);
+                updateStarUI(false);
+                updateFavListUI();
+            } else {
+                favorites.push(item);
+                updateStarUI(true);
+            }
+            localStorage.setItem('vocab_favs', JSON.stringify(favorites));
+        }
+
+        function updateFavListUI() {
+            if (favorites.length === 0) {
+                favListContainer.innerHTML = `<p class="text-slate-500 text-xs italic text-center py-4">尚未收藏任何句子...</p>`;
+                return;
+            }
+            
+            favListContainer.innerHTML = favorites.map((f, i) => `
+                <div class="flex justify-between items-center bg-slate-800/40 p-2.5 rounded-lg text-sm border border-slate-700/50">
+                    <div class="truncate mr-2">
+                        <span class="text-sky-400 font-bold tracking-wide">${f.answer}</span>
+                        <span class="text-slate-400 ml-2 text-xs border-l border-slate-600 pl-2">${f.sentence}</span>
+                    </div>
+                    <button onclick="removeFav(event, ${i})" class="text-slate-500 hover:text-rose-400 transition-colors p-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        window.removeFav = function(e, index) {
+            e.stopPropagation();
+            favorites.splice(index, 1);
+            localStorage.setItem('vocab_favs', JSON.stringify(favorites));
+            updateFavListUI();
+            const item = vocabData[currentIndex];
+            const isStillFav = favorites.some(f => f.sentence === item.sentence);
+            updateStarUI(isStillFav);
+        };
+
+        function showFeedback(text, colorClass) {
+            feedback.innerText = text;
+            feedback.className = `absolute top-4 right-8 font-bold text-lg ${colorClass}`;
+            feedback.classList.remove('hidden-element');
+            setTimeout(() => feedback.classList.add('hidden-element'), 1000);
+        }
+
+        answerInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') checkAnswer();
+        });
+
+        window.onload = initGame;
+    </script>
+</body>
+</html>
