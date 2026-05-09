@@ -191,12 +191,172 @@ function renderLessonCheckboxes(lessons) {
         checkbox.checked = true;
         checkbox.value = lesson;
         
+<<<<<<< HEAD
         checkbox.addEventListener('change', e => {
             if (e.target.checked) currentFilterLessons.add(lesson);
             else currentFilterLessons.delete(lesson);
             updateShuffledList();
             currentQuestionIndex = 0;
             renderCards();
+=======
+        </div>
+
+    <script>
+        let vocabData = [];
+        let favorites = JSON.parse(localStorage.getItem('vocab_favs')) || [];
+        let currentIndex = 0;
+        let isWaitingNext = false;
+
+        const sentenceDisplay = document.getElementById('sentence-display');
+        const answerInput = document.getElementById('answer-input');
+        const mainCard = document.getElementById('main-card');
+        const feedback = document.getElementById('feedback');
+        const correctAnswerDisplay = document.getElementById('correct-answer-display');
+        const correctWord = document.getElementById('correct-word');
+        const nextBtn = document.getElementById('next-btn');
+        const inputHint = document.getElementById('input-hint');
+        const favIcon = document.getElementById('fav-icon');
+        const favListContainer = document.getElementById('fav-list');
+
+        async function loadData() {
+            try {
+                const response = await fetch('example.json');
+                if (!response.ok) throw new Error('無法讀取');
+                vocabData = await response.json();
+                vocabData.sort(() => Math.random() - 0.5);
+                return true; 
+            } catch (error) {
+                sentenceDisplay.innerHTML = `<span class="text-rose-400">載入失敗 (請確認 example.json 存在)</span>`;
+                return false;
+            }
+        }
+
+        async function initGame() {
+            currentIndex = 0;
+            isWaitingNext = false;
+            
+            resetQuestionUI();
+            updateFavListUI(); 
+            
+            const isLoaded = await loadData();
+            if (isLoaded) {
+                showQuestion();
+            }
+        }
+
+        function resetQuestionUI() {
+            answerInput.value = '';
+            answerInput.classList.remove('hidden-element');
+            inputHint.classList.remove('hidden-element');
+            correctAnswerDisplay.classList.add('hidden-element');
+            nextBtn.classList.add('hidden-element');
+            isWaitingNext = false;
+        }
+
+        function showQuestion() {
+            if (vocabData.length === 0) return;
+            const item = vocabData[currentIndex];
+            sentenceDisplay.innerText = item.sentence;
+            
+            const isFav = favorites.some(f => f.sentence === item.sentence);
+            updateStarUI(isFav);
+            answerInput.focus();
+        }
+
+        function updateStarUI(isFav) {
+            favIcon.setAttribute('fill', isFav ? 'currentColor' : 'none');
+            favIcon.classList.toggle('text-yellow-400', isFav);
+        }
+
+        function checkAnswer() {
+            if (vocabData.length === 0 || isWaitingNext) return;
+            const userAnswer = answerInput.value.trim().toLowerCase();
+            const correctObj = vocabData[currentIndex];
+
+            if (userAnswer === correctObj.answer.toLowerCase()) {
+                showFeedback('Correct!', 'text-sky-400 neon-text-blue');
+                
+                updateFavListUI(); 
+                currentIndex = (currentIndex + 1) % vocabData.length;
+                setTimeout(showQuestion, 400);
+                answerInput.value = '';
+            } else {
+                mainCard.classList.add('shake');
+                setTimeout(() => mainCard.classList.remove('shake'), 400);
+
+                isWaitingNext = true;
+                correctWord.innerText = correctObj.answer;
+                correctAnswerDisplay.classList.remove('hidden-element');
+                answerInput.classList.add('hidden-element');
+                inputHint.classList.add('hidden-element');
+                nextBtn.classList.remove('hidden-element');
+                nextBtn.focus();
+            }
+        }
+
+        function handleNextClick() {
+            updateFavListUI();
+            resetQuestionUI();
+            currentIndex = (currentIndex + 1) % vocabData.length;
+            showQuestion();
+        }
+
+        function toggleFavorite() {
+            const item = vocabData[currentIndex];
+            const idx = favorites.findIndex(f => f.sentence === item.sentence);
+            
+            if (idx > -1) {
+                favorites.splice(idx, 1);
+                updateStarUI(false);
+                updateFavListUI();
+            } else {
+                favorites.push(item);
+                updateStarUI(true);
+            }
+            localStorage.setItem('vocab_favs', JSON.stringify(favorites));
+        }
+
+        function updateFavListUI() {
+            if (favorites.length === 0) {
+                favListContainer.innerHTML = `<p class="text-slate-500 text-xs italic text-center py-4">尚未收藏任何句子...</p>`;
+                return;
+            }
+            
+            favListContainer.innerHTML = favorites.map((f, i) => `
+                <div class="flex justify-between items-center bg-slate-800/40 p-2.5 rounded-lg text-sm border border-slate-700/50">
+                    <div class="truncate mr-2">
+                        <span class="text-sky-400 font-bold tracking-wide">${f.answer}</span>
+                        <span class="text-slate-400 ml-2 text-xs border-l border-slate-600 pl-2">${f.sentence}</span>
+                    </div>
+                    <button onclick="removeFav(event, ${i})" class="text-slate-500 hover:text-rose-400 transition-colors p-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        window.removeFav = function(e, index) {
+            e.stopPropagation();
+            favorites.splice(index, 1);
+            localStorage.setItem('vocab_favs', JSON.stringify(favorites));
+            updateFavListUI();
+            const item = vocabData[currentIndex];
+            const isStillFav = favorites.some(f => f.sentence === item.sentence);
+            updateStarUI(isStillFav);
+        };
+
+        function showFeedback(text, colorClass) {
+            feedback.innerText = text;
+            feedback.className = `absolute top-4 right-8 font-bold text-lg ${colorClass}`;
+            feedback.classList.remove('hidden-element');
+            setTimeout(() => feedback.classList.add('hidden-element'), 1000);
+        }
+
+        answerInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') checkAnswer();
+>>>>>>> 01efbb70ebe7f02792d1198e1735531891daf643
         });
 
         const span = document.createElement('span');
