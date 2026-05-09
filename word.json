@@ -5,7 +5,7 @@
         "lesson": "4"
     },
     {
-        "sentence": "It really a___s me when someone chews food loudly during a movie, because I find it impossible to concentrate on the screen.",
+        "sentence": "It really a___ys me when someone chews food loudly during a movie, because I find it impossible to concentrate on the screen.",
         "answer": "annoys",
         "lesson": "4"
     },
@@ -1760,868 +1760,443 @@
         "lesson": "6"
     },
     {
-        "sentence": "She decided to a___t a healthier lifestyle by exercising every morning and eating more vegetables instead of fast food.",
+        "sentence": "The young couple decided to a___t twins from a foreign country after waiting nearly five years for the complicated international adoption process to be completed.",
         "answer": "adopt",
         "lesson": "4"
     },
     {
-        "sentence": "The committee voted to a___t the new rules immediately.",
-        "answer": "adopt",
-        "lesson": "4"
-    },
-    {
-        "sentence": "Loud noises always a___y me, especially when I am trying to concentrate.",
-        "answer": "annoy",
-        "lesson": "4"
-    },
-    {
-        "sentence": "It really a___ys me when people interrupt during a conversation.",
+        "sentence": "The way my little brother keeps tapping his fingers on the dinner table while we are eating really a___s our mother, who values proper manners and peaceful meals.",
         "answer": "annoys",
         "lesson": "4"
     },
     {
-        "sentence": "You should c____e studying if you want to pass the final exam.",
+        "sentence": "Even though the hiking trail became extremely steep and rocky near the top, the determined group decided to c___e climbing until they finally reached the summit.",
         "answer": "continue",
         "lesson": "4"
     },
     {
-        "sentence": "The rain might c____e until tomorrow morning.",
-        "answer": "continue",
-        "lesson": "4"
-    },
-    {
-        "sentence": "The patient was in a c____ous state of pain for several days.",
+        "sentence": "The air conditioner produced a c___s annoying humming sound throughout the entire night, which made it very difficult for anyone in the apartment to fall asleep.",
         "answer": "continuous",
         "lesson": "4"
     },
     {
-        "sentence": "The factory has faced c____ous production since the new manager took over.",
-        "answer": "continuous",
-        "lesson": "4"
-    },
-    {
-        "sentence": "It is difficult to c____l a class full of energetic young children.",
+        "sentence": "Parents cannot c___l every single thing their teenage children do, but they can set clear boundaries and hope that their kids make responsible choices when unsupervised.",
         "answer": "control",
         "lesson": "4"
     },
     {
-        "sentence": "The driver lost c____l of the car on the icy road.",
-        "answer": "control",
-        "lesson": "4"
-    },
-    {
-        "sentence": "Schools should e___e students about the dangers of drug abuse.",
+        "sentence": "The zoo offers special guided tours to e___e visitors about endangered species, including why animals like pandas and rhinos are disappearing from the wild forever.",
         "answer": "educate",
         "lesson": "4"
     },
     {
-        "sentence": "It takes patience to e___e children with learning difficulties.",
-        "answer": "educate",
-        "lesson": "4"
-    },
-    {
-        "sentence": "Education is the most powerful weapon to change the world.",
+        "sentence": "Without proper e___n, it is extremely difficult for people in developing countries to escape poverty and build better lives for themselves and their families.",
         "answer": "education",
         "lesson": "4"
     },
     {
-        "sentence": "She completed her e____n at a famous university abroad.",
-        "answer": "education",
-        "lesson": "4"
-    },
-    {
-        "sentence": "The museum offers many e____al programs for children.",
+        "sentence": "The mobile app is both fun and e___l, teaching young children basic math skills through colorful animations, cheerful music, and interactive mini-games.",
         "answer": "educational",
         "lesson": "4"
     },
     {
-        "sentence": "Watching documentaries can be both entertaining and e____al.",
-        "answer": "educational",
-        "lesson": "4"
-    },
-    {
-        "sentence": "Please e___e that all doors are locked before you leave.",
+        "sentence": "Before boarding the international flight, the gate agent will check your passport to e___e that it has at least six months of validity remaining before expiration.",
         "answer": "ensure",
         "lesson": "4"
     },
     {
-        "sentence": "Regular checks e___e the safety of the equipment.",
-        "answer": "ensure",
-        "lesson": "4"
-    },
-    {
-        "sentence": "All people are born e___l, regardless of their background.",
+        "sentence": "The law requires that all public schools provide e___l educational opportunities to students with disabilities, including special equipment and trained support staff.",
         "answer": "equal",
         "lesson": "4"
     },
     {
-        "sentence": "The company offers e___l pay for men and women doing the same job.",
-        "answer": "equal",
-        "lesson": "4"
-    },
-    {
-        "sentence": "Gender e___y is still a major issue in many workplaces.",
+        "sentence": "Martin Luther King Jr. dedicated his entire life to fighting for racial e___y, dreaming of a day when his children would be judged by their character, not their skin color.",
         "answer": "equality",
         "lesson": "4"
     },
     {
-        "sentence": "The organization fights for racial e___y.",
-        "answer": "equality",
-        "lesson": "4"
-    },
-    {
-        "sentence": "They decided to e___h a new school in the rural area.",
+        "sentence": "The small town hopes to e___h a community garden where residents can grow their own vegetables, share gardening tips, and build stronger neighborhood friendships.",
         "answer": "establish",
         "lesson": "4"
     },
     {
-        "sentence": "The company was e___ed in 1995.",
-        "answer": "established",
-        "lesson": "4"
-    },
-    {
-        "sentence": "The e___t of a new library took nearly two years.",
+        "sentence": "The e___t of the European Union was a historic political achievement that aimed to prevent future wars between member countries and promote economic cooperation.",
         "answer": "establishment",
         "lesson": "4"
     },
     {
-        "sentence": "The e___t of diplomatic relations benefited both countries.",
-        "answer": "establishment",
-        "lesson": "4"
-    },
-    {
-        "sentence": "Over half of the employees in the company are f___e.",
+        "sentence": "Although the engineering department has many talented f___e students, only a small percentage of them end up working in the construction industry after graduation.",
         "answer": "female",
         "lesson": "4"
     },
     {
-        "sentence": "The f___e elephant stayed close to her baby.",
-        "answer": "female",
-        "lesson": "4"
-    },
-    {
-        "sentence": "School rules f___d students from using mobile phones in class.",
+        "sentence": "The national park rules clearly f___d visitors from feeding any wild animals, because human food can make them sick and cause them to lose their natural fear of people.",
         "answer": "forbid",
         "lesson": "4"
     },
     {
-        "sentence": "The law strictly f___ds smoking in public places.",
-        "answer": "forbids",
-        "lesson": "4"
-    },
-    {
-        "sentence": "He did it in h___r of his late father.",
+        "sentence": "The military held a special ceremony in h___r of the courageous soldiers who had given their lives defending their country during the long and brutal war.",
         "answer": "honor",
         "lesson": "4"
     },
     {
-        "sentence": "We hold this ceremony to h___r our veterans.",
-        "answer": "honor",
-        "lesson": "4"
-    },
-    {
-        "sentence": "She received an h___e award for her bravery.",
+        "sentence": "Volunteering at the homeless shelter every weekend for the past ten years is a truly h___e commitment that demonstrates incredible kindness and selflessness.",
         "answer": "honorable",
         "lesson": "4"
     },
     {
-        "sentence": "Serving in the military is considered an h___e duty.",
-        "answer": "honorable",
-        "lesson": "4"
-    },
-    {
-        "sentence": "He tried to p___e me to join the club, but I refused.",
+        "sentence": "Despite my best efforts to p___e my husband to take a vacation, he insists that we cannot afford to leave town until he finishes his big project at work.",
         "answer": "persuade",
         "lesson": "4"
     },
     {
-        "sentence": "Nothing could p___e him to change his mind.",
-        "answer": "persuade",
-        "lesson": "4"
-    },
-    {
-        "sentence": "After much p___n, she finally agreed to help.",
+        "sentence": "Through gentle p___n and lots of encouragement, the teacher convinced the shy student to participate in the class debate, which boosted his confidence tremendously.",
         "answer": "persuasion",
         "lesson": "4"
     },
     {
-        "sentence": "He used gentle p___n rather than force.",
-        "answer": "persuasion",
-        "lesson": "4"
-    },
-    {
-        "sentence": "The advertisement was very p___e and made me want to buy the product.",
+        "sentence": "The advertisement for the new weight loss supplement was so p___e that millions of people bought it, even though there was no scientific evidence that it actually worked.",
         "answer": "persuasive",
         "lesson": "4"
     },
     {
-        "sentence": "Her arguments were so p___e that the committee changed its decision.",
-        "answer": "persuasive",
-        "lesson": "4"
-    },
-    {
-        "sentence": "The government introduced a new p___y to reduce pollution.",
+        "sentence": "The restaurant has a clear p___y that customers who arrive more than fifteen minutes late for their reservation will lose their table and have to wait for the next available one.",
         "answer": "policy",
         "lesson": "4"
     },
     {
-        "sentence": "It is company p___y to refund unsatisfied customers.",
-        "answer": "policy",
-        "lesson": "4"
-    },
-    {
-        "sentence": "The school p___l spoke at the graduation ceremony.",
+        "sentence": "The school p___l sent a letter to all parents explaining the new dress code, which requires students to wear uniforms starting from the beginning of the next semester.",
         "answer": "principal",
         "lesson": "4"
     },
     {
-        "sentence": "My p___l reason for moving is to find a better job.",
-        "answer": "principal",
-        "lesson": "4"
-    },
-    {
-        "sentence": "It took him months to r___r from the accident.",
+        "sentence": "After the embarrassing incident at the office party, it took him several months to r___r his reputation and regain the trust of his coworkers and boss.",
         "answer": "recover",
         "lesson": "4"
     },
     {
-        "sentence": "She slowly r___ed her lost files from the backup.",
-        "answer": "recovered",
-        "lesson": "4"
-    },
-    {
-        "sentence": "The patient's r___y surprised the doctors.",
+        "sentence": "The patient's remarkable r___y surprised even his own doctors, as he was able to return to his physically demanding job just six weeks after major back surgery.",
         "answer": "recovery",
         "lesson": "4"
     },
     {
-        "sentence": "Economic r___y may take several years.",
-        "answer": "recovery",
-        "lesson": "4"
-    },
-    {
-        "sentence": "The coastal r___n is famous for its seafood.",
+        "sentence": "This r___n of the country has suffered from severe drought for the past three years, causing many farmers to lose their crops and struggle to feed their families.",
         "answer": "region",
         "lesson": "4"
     },
     {
-        "sentence": "He works in the financial r___n of the city.",
-        "answer": "region",
-        "lesson": "4"
-    },
-    {
-        "sentence": "The festival is a r___l event held every autumn.",
+        "sentence": "Traditional music varies greatly by r___l customs, with northern areas favoring fast-paced fiddles and southern areas preferring slow, emotional ballads.",
         "answer": "regional",
         "lesson": "4"
     },
     {
-        "sentence": "Regional differences in dialect can be very interesting.",
-        "answer": "regional",
-        "lesson": "4"
-    },
-    {
-        "sentence": "Please put your s___e on the dotted line.",
+        "sentence": "Before you can drive the rental car off the lot, you must s___n a contract agreeing to return it with a full tank of gas and without any major damage to the vehicle.",
         "answer": "sign",
         "lesson": "4"
     },
     {
-        "sentence": "Dark clouds are often a s___n of approaching rain.",
-        "answer": "sign",
-        "lesson": "4"
-    },
-    {
-        "sentence": "He underwent heart s___y last week.",
+        "sentence": "The veterinarian recommended immediate s___y to remove the large tumor from the elderly dog's stomach, warning that waiting any longer would be extremely risky.",
         "answer": "surgery",
         "lesson": "4"
     },
     {
-        "sentence": "The patient is recovering well from the s___y.",
-        "answer": "surgery",
-        "lesson": "4"
-    },
-    {
-        "sentence": "The kidnapper made a t___t to kill the hostage.",
+        "sentence": "The rapid spread of fake news on social media platforms poses a serious t___t to public safety, as false information can cause panic and lead to dangerous behavior.",
         "answer": "threat",
         "lesson": "4"
     },
     {
-        "sentence": "His statement was seen as a direct t___t to national security.",
-        "answer": "threat",
-        "lesson": "4"
-    },
-    {
-        "sentence": "The storm t___ned the small coastal town.",
+        "sentence": "The rising sea levels caused by climate change could t___n the existence of several small island nations, whose land may be completely underwater within fifty years.",
         "answer": "threaten",
         "lesson": "4"
     },
     {
-        "sentence": "He t___ed to quit if the company didn't raise his salary.",
-        "answer": "threatened",
-        "lesson": "4"
-    },
-    {
-        "sentence": "The soldiers carried advanced w___ns.",
+        "sentence": "The police officer discovered an illegal w___n hidden inside a secret compartment of the suspect's car during a routine traffic stop for a broken taillight.",
         "answer": "weapon",
         "lesson": "4"
     },
     {
-        "sentence": "Words can be powerful w___ns, either harmful or healing.",
-        "answer": "weapon",
-        "lesson": "4"
-    },
-    {
-        "sentence": "He worked hard to a___e his dream of becoming a pilot.",
+        "sentence": "Through years of disciplined practice and an unwavering commitment to her goals, she finally managed to a___e the highest level of certification in her profession.",
         "answer": "achieve",
         "lesson": "5"
     },
     {
-        "sentence": "You can a___e anything if you put enough effort into it.",
-        "answer": "achieve",
-        "lesson": "5"
-    },
-    {
-        "sentence": "Winning the gold medal was a great a___t.",
+        "sentence": "Completing a marathon at the age of seventy was an incredible personal a___t for the retired teacher, who had only started running five years earlier.",
         "answer": "achievement",
         "lesson": "5"
     },
     {
-        "sentence": "Graduating from college is a major a___t in life.",
-        "answer": "achievement",
-        "lesson": "5"
-    },
-    {
-        "sentence": "She has a positive a___e towards her work.",
+        "sentence": "Your a___e toward criticism will determine how much you grow in your career, because people who get defensive miss valuable opportunities to learn and improve.",
         "answer": "attitude",
         "lesson": "5"
     },
     {
-        "sentence": "His bad a___e often gets him into trouble.",
-        "answer": "attitude",
-        "lesson": "5"
-    },
-    {
-        "sentence": "She chose medicine as her c___r.",
+        "sentence": "After working as a nurse for fifteen exhausting years, she decided to change her c___r and become a yoga instructor, finding much greater peace and fulfillment.",
         "answer": "career",
         "lesson": "5"
     },
     {
-        "sentence": "His c___r as a musician lasted forty years.",
-        "answer": "career",
-        "lesson": "5"
-    },
-    {
-        "sentence": "Learning a new language is a big c___e, but it is rewarding.",
+        "sentence": "Moving to a foreign country where you don't speak the language is a serious c___e, but it can also be an incredibly rewarding experience that changes your perspective on life.",
         "answer": "challenge",
         "lesson": "5"
     },
     {
-        "sentence": "He accepted the c___e of climbing the mountain.",
-        "answer": "challenge",
-        "lesson": "5"
-    },
-    {
-        "sentence": "Your work must be c___t in quality.",
+        "sentence": "The quality of the bakery's bread has been remarkably c___t for twenty years, with every loaf coming out of the oven perfectly golden brown and delicious.",
         "answer": "consistent",
         "lesson": "5"
     },
     {
-        "sentence": "She is c___t in her efforts to help others.",
-        "answer": "consistent",
-        "lesson": "5"
-    },
-    {
-        "sentence": "He c___y arrives at work before 8 a.m.",
+        "sentence": "The elderly gentleman has c___y donated one hundred dollars to the local animal shelter every single month for the past fifteen years, giving over eighteen thousand dollars in total.",
         "answer": "consistently",
         "lesson": "5"
     },
     {
-        "sentence": "The team has c___y performed well this season.",
-        "answer": "consistently",
-        "lesson": "5"
-    },
-    {
-        "sentence": "Please c___y my best wishes to your family.",
-        "answer": "convey",
-        "lesson": "5"
-    },
-    {
-        "sentence": "Body language often c___ys feelings more than words.",
+        "sentence": "The old photograph c___ys a powerful sense of nostalgia, showing a group of smiling children playing in a field that has now been replaced by a busy shopping mall.",
         "answer": "conveys",
         "lesson": "5"
     },
     {
-        "sentence": "Only a fool would d___e death.",
+        "sentence": "Do you really d___e to walk through that abandoned house late at night, even though everyone in town says it is haunted by the ghost of the previous owner?",
         "answer": "dare",
         "lesson": "5"
     },
     {
-        "sentence": "She didn't d___e to tell him the truth.",
-        "answer": "dare",
-        "lesson": "5"
-    },
-    {
-        "sentence": "The mail carrier d___rs letters every morning.",
-        "answer": "delivers",
-        "lesson": "5"
-    },
-    {
-        "sentence": "The CEO will d___r the keynote speech.",
+        "sentence": "The flower shop promises to d___r fresh bouquets anywhere in the city within three hours, making it very popular with last-minute gift givers and forgetful husbands.",
         "answer": "deliver",
         "lesson": "5"
     },
     {
-        "sentence": "The pizza d___y arrived in twenty minutes.",
+        "sentence": "Because of the unexpected truck driver strike, the d___y of essential goods like medicine and baby formula may be delayed by up to a full week in some areas.",
         "answer": "delivery",
         "lesson": "5"
     },
     {
-        "sentence": "Free d___y is offered for orders over $50.",
-        "answer": "delivery",
-        "lesson": "5"
-    },
-    {
-        "sentence": "Poor children are often at a d___e in education.",
+        "sentence": "One major d___e of buying a very cheap used car is that it will likely require frequent expensive repairs, which can end up costing more than buying a reliable new vehicle.",
         "answer": "disadvantage",
         "lesson": "5"
     },
     {
-        "sentence": "His lack of experience is a serious d___e.",
-        "answer": "disadvantage",
+        "sentence": "The firefighter e___d the frightened children at the school assembly by dressing up as a friendly dalmatian dog and teaching them about fire safety through funny songs.",
+        "answer": "entertained",
         "lesson": "5"
     },
     {
-        "sentence": "The magician e___ned the audience with his tricks.",
-        "answer": "entertain",
-        "lesson": "5"
-    },
-    {
-        "sentence": "She loves to e___n her guests with stories.",
-        "answer": "entertain",
-        "lesson": "5"
-    },
-    {
-        "sentence": "Video games are a popular form of e___t.",
+        "sentence": "The beach resort offers endless e___t options for tourists, including jet skiing, parasailing, beach volleyball tournaments, and nightly bonfires with live acoustic music.",
         "answer": "entertainment",
         "lesson": "5"
     },
     {
-        "sentence": "The hotel offers live e___t every evening.",
-        "answer": "entertainment",
-        "lesson": "5"
-    },
-    {
-        "sentence": "The weather has been e___e this summer, with record heat.",
+        "sentence": "The mountain climbers faced e___e danger as they attempted to scale the frozen vertical wall, where even a small mistake could send them falling thousands of feet to their deaths.",
         "answer": "extreme",
         "lesson": "5"
     },
     {
-        "sentence": "He shows e___e politeness to everyone.",
-        "answer": "extreme",
-        "lesson": "5"
-    },
-    {
-        "sentence": "He will f___l his contract next month.",
+        "sentence": "After decades of hard work and patient saving, the elderly couple finally managed to f___l their lifelong dream of buying a small cottage by the peaceful ocean.",
         "answer": "fulfill",
         "lesson": "5"
     },
     {
-        "sentence": "Traveling abroad helped f___l her childhood dream.",
-        "answer": "fulfill",
-        "lesson": "5"
-    },
-    {
-        "sentence": "Losing his job caused serious h___p.",
+        "sentence": "The immigrant family endured incredible h___p when they first arrived in the new country, living in a tiny crowded apartment and working multiple low-paying jobs just to survive.",
         "answer": "hardship",
         "lesson": "5"
     },
     {
-        "sentence": "Many families faced great financial h___p during the recession.",
-        "answer": "hardship",
-        "lesson": "5"
-    },
-    {
-        "sentence": "The story has an i___y character that can fly.",
+        "sentence": "The young girl had an i___y pet dragon who lived under her bed and would only come out at night to protect her from the monsters she believed lived in her closet.",
         "answer": "imaginary",
         "lesson": "5"
     },
     {
-        "sentence": "Children often have i___y friends.",
-        "answer": "imaginary",
-        "lesson": "5"
-    },
-    {
-        "sentence": "She has a vivid i___n and loves to write stories.",
+        "sentence": "Children use their i___n constantly when they play, transforming ordinary sticks into magical wands and cardboard boxes into giant spaceships flying through outer space.",
         "answer": "imagination",
         "lesson": "5"
     },
     {
-        "sentence": "Use your i___n to picture the future.",
-        "answer": "imagination",
-        "lesson": "5"
-    },
-    {
-        "sentence": "The movie has very i___e special effects.",
+        "sentence": "The most i___e chefs in the world are not afraid to combine unusual ingredients, such as chocolate and chili peppers, to create surprising and delicious new flavors.",
         "answer": "imaginative",
         "lesson": "5"
     },
     {
-        "sentence": "Her i___e solution solved the problem quickly.",
-        "answer": "imaginative",
-        "lesson": "5"
-    },
-    {
-        "sentence": "Can you i___e living without electricity?",
+        "sentence": "Try to i___e a world where all wars have ended permanently and nations work together peacefully to solve problems like hunger, disease, and environmental destruction.",
         "answer": "imagine",
         "lesson": "5"
     },
     {
-        "sentence": "I never i___d meeting a celebrity here.",
-        "answer": "imagine",
-        "lesson": "5"
-    },
-    {
-        "sentence": "The fallen tree was an o___e in the road.",
+        "sentence": "For many aspiring athletes, the lack of access to proper training facilities and experienced coaches is a major o___e to reaching their full potential in sports.",
         "answer": "obstacle",
         "lesson": "5"
     },
     {
-        "sentence": "Fear is a major o___e to success.",
-        "answer": "obstacle",
-        "lesson": "5"
-    },
-    {
-        "sentence": "She managed to o___e her fear of heights.",
+        "sentence": "With the help of her supportive friends and a wonderful therapist, she was finally able to o___e her eating disorder and develop a healthy relationship with food again.",
         "answer": "overcome",
         "lesson": "5"
     },
     {
-        "sentence": "Together, we can o___e any difficulty.",
-        "answer": "overcome",
-        "lesson": "5"
-    },
-    {
-        "sentence": "The Thanksgiving p___e included colorful floats.",
+        "sentence": "The colorful Carnival p___e wound its way through the narrow streets of the old town, with dancers in elaborate costumes, drummers playing infectious rhythms, and joyful crowds cheering.",
         "answer": "parade",
         "lesson": "5"
     },
     {
-        "sentence": "People lined the streets to watch the victory p___e.",
-        "answer": "parade",
-        "lesson": "5"
-    },
-    {
-        "sentence": "He spoke with great p___n about human rights.",
+        "sentence": "The musician's p___n for jazz music was evident in every note he played, as he closed his eyes and lost himself completely in the soulful melodies he created on his saxophone.",
         "answer": "passion",
         "lesson": "5"
     },
     {
-        "sentence": "Her p___n for cooking led her to open a restaurant.",
-        "answer": "passion",
-        "lesson": "5"
-    },
-    {
-        "sentence": "She is a p___e advocate for animal welfare.",
+        "sentence": "He is a p___e collector of rare books, having spent over thirty years searching dusty bookshops and attending expensive auctions to find first editions of his favorite novels.",
         "answer": "passionate",
         "lesson": "5"
     },
     {
-        "sentence": "He gave a p___e speech about climate change.",
-        "answer": "passionate",
-        "lesson": "5"
-    },
-    {
-        "sentence": "Many people live below the p___y line.",
+        "sentence": "Despite the government's efforts to stimulate the economy, millions of citizens still live in extreme p___y, unable to afford basic necessities like food, clean water, or medicine.",
         "answer": "poverty",
         "lesson": "5"
     },
     {
-        "sentence": "The organization works to end p___y worldwide.",
-        "answer": "poverty",
+        "sentence": "If you wish to appeal the court's decision, you must submit a formal written r___t to the appeals judge within thirty days of the original verdict being announced.",
+        "answer": "request",
         "lesson": "5"
     },
     {
-        "sentence": "He r___ed a taxi through a mobile app.",
-        "answer": "requested",
-        "lesson": "5"
-    },
-    {
-        "sentence": "The lifeguard performed a daring r___e.",
+        "sentence": "The heroic lifeguard performed a dramatic r___e, diving into the rough ocean waves and pulling a struggling swimmer back to shore just before he disappeared beneath the surface.",
         "answer": "rescue",
         "lesson": "5"
     },
     {
-        "sentence": "Firefighters came to the r___e of the trapped miners.",
-        "answer": "rescue",
-        "lesson": "5"
-    },
-    {
-        "sentence": "She can w___e beautiful baskets from willow branches.",
+        "sentence": "The skilled artist learned to w___e stunning tapestries from her grandmother, using a traditional wooden loom and brightly colored wool that she dyed herself using natural plants.",
         "answer": "weave",
         "lesson": "5"
     },
     {
-        "sentence": "The storyteller w___ed a tale of adventure and mystery.",
-        "answer": "weaved",
-        "lesson": "5"
-    },
-    {
-        "sentence": "The temperature was a___e zero, so we wore heavy coats.",
+        "sentence": "As the judge entered the courtroom and took her seat at the bench, there was a___e silence among the lawyers, jury members, and spectators who were all waiting nervously.",
         "answer": "absolute",
         "lesson": "6"
     },
     {
-        "sentence": "You have an a___e right to know the truth.",
-        "answer": "absolute",
-        "lesson": "6"
-    },
-    {
-        "sentence": "I am a___y certain that he is lying.",
+        "sentence": "After testing the electrical circuit three times with a voltage meter and confirming that no current was flowing, the electrician was a___y sure it was safe to begin working.",
         "answer": "absolutely",
         "lesson": "6"
     },
     {
-        "sentence": "The movie was a___y fantastic.",
-        "answer": "absolutely",
-        "lesson": "6"
-    },
-    {
-        "sentence": "I must a___e for breaking your vase.",
+        "sentence": "I want to a___e sincerely for forgetting our tenth wedding anniversary yesterday; work has been incredibly stressful, but that is no excuse for such an important oversight.",
         "answer": "apologize",
         "lesson": "6"
     },
     {
-        "sentence": "He a___ed for being late to the meeting.",
-        "answer": "apologized",
-        "lesson": "6"
-    },
-    {
-        "sentence": "She wrote a letter of a___y.",
+        "sentence": "The politician issued a public a___y after being caught on video making offensive remarks, claiming that his words had been taken out of context and that he deeply regretted them.",
         "answer": "apology",
         "lesson": "6"
     },
     {
-        "sentence": "His a___y seemed sincere.",
-        "answer": "apology",
+        "sentence": "The innovative school has adopted a unique a___h to teaching foreign languages, immersing students completely in the target language from day one without using any English at all.",
+        "answer": "approach",
         "lesson": "6"
     },
     {
-        "sentence": "Don't be a___l to your younger sister.",
+        "sentence": "The condition of the rental apartment was truly a___l; the walls were covered in mysterious stains, the bathroom smelled like mold, and the kitchen sink was completely clogged with old food.",
         "answer": "awful",
         "lesson": "6"
     },
     {
-        "sentence": "The weather is a___l today.",
-        "answer": "awful",
+        "sentence": "Workplace b___g is a serious issue that affects employees of all ages, with bullies often using verbal abuse, social exclusion, or unfair criticism to intimidate their coworkers.",
+        "answer": "bullying",
         "lesson": "6"
     },
     {
-        "sentence": "School b___ys should be stopped immediately.",
-        "answer": "bullys",
-        "lesson": "6"
-    },
-    {
-        "sentence": "The older child b___ied the younger ones in the playground.",
-        "answer": "bullied",
-        "lesson": "6"
-    },
-    {
-        "sentence": "The graduation c___y was held in the main hall.",
+        "sentence": "The graduation c___y was held in the university's grand auditorium, where hundreds of proud families watched their children walk across the stage to receive their hard-earned diplomas.",
         "answer": "ceremony",
         "lesson": "6"
     },
     {
-        "sentence": "They had a private wedding c___y on the beach.",
-        "answer": "ceremony",
-        "lesson": "6"
-    },
-    {
-        "sentence": "It is c___l to abandon a sick pet.",
+        "sentence": "Locking a dog inside a hot car on a summer day is not just c___l but also illegal in many states, as the temperature inside a vehicle can quickly rise to deadly levels.",
         "answer": "cruel",
         "lesson": "6"
     },
     {
-        "sentence": "The king was known for his c___l punishments.",
-        "answer": "cruel",
-        "lesson": "6"
-    },
-    {
-        "sentence": "Such c___y against animals is unacceptable.",
+        "sentence": "The c___y of the dictator's regime shocked the world when photos emerged showing prisoners being tortured and held in tiny dark cells without food or water for weeks.",
         "answer": "cruelty",
         "lesson": "6"
     },
     {
-        "sentence": "The mother's c___y shocked the neighbors.",
-        "answer": "cruelty",
-        "lesson": "6"
-    },
-    {
-        "sentence": "The soldier had to d___d his country.",
+        "sentence": "The brave young woman decided to d___d her younger brother against the school bullies, stepping between him and his tormentors and refusing to back down despite her own fear.",
         "answer": "defend",
         "lesson": "6"
     },
     {
-        "sentence": "Lawyers will d___d the accused in court.",
-        "answer": "defend",
-        "lesson": "6"
-    },
-    {
-        "sentence": "He built a strong d___e against the accusations.",
+        "sentence": "The castle's ancient d___e system included a deep moat filled with water, thick stone walls that were nearly impossible to climb, and arrow slots for archers to shoot through.",
         "answer": "defense",
         "lesson": "6"
     },
     {
-        "sentence": "The castle walls were built for d___e.",
-        "answer": "defense",
-        "lesson": "6"
-    },
-    {
-        "sentence": "Her smile seemed g___e, not fake.",
+        "sentence": "His apology seemed g___e, unlike the previous one which had felt rehearsed and insincere, because this time his voice cracked with emotion and his eyes were filled with tears.",
         "answer": "genuine",
         "lesson": "6"
     },
     {
-        "sentence": "This bag is made of g___e leather.",
-        "answer": "genuine",
-        "lesson": "6"
-    },
-    {
-        "sentence": "He was g___y sorry for what he had done.",
+        "sentence": "She was g___y confused when strangers on the street kept congratulating her, until she realized that she had accidentally been photographed with a famous movie star the previous day.",
         "answer": "genuinely",
         "lesson": "6"
     },
     {
-        "sentence": "She g___y cares about the environment.",
-        "answer": "genuinely",
-        "lesson": "6"
-    },
-    {
-        "sentence": "There has been a g___l change in his behavior.",
+        "sentence": "Learning to play a difficult piece of music on the piano is a g___l process that requires daily practice, patience, and the willingness to make mistakes and learn from them.",
         "answer": "gradual",
         "lesson": "6"
     },
     {
-        "sentence": "The river has a g___l slope toward the sea.",
-        "answer": "gradual",
-        "lesson": "6"
-    },
-    {
-        "sentence": "The weather is g___y getting warmer.",
+        "sentence": "The once vibrant downtown area has g___y declined over the past two decades, with storefronts emptying, crime rates rising, and longtime residents moving to safer neighborhoods.",
         "answer": "gradually",
         "lesson": "6"
     },
     {
-        "sentence": "She g___y learned to trust people again.",
-        "answer": "gradually",
-        "lesson": "6"
-    },
-    {
-        "sentence": "The strange i___t was later explained as a technical error.",
+        "sentence": "The embarrassing i___t at the fancy restaurant occurred when the waiter tripped and spilled red wine all over the expensive white dress of a very important customer.",
         "answer": "incident",
         "lesson": "6"
     },
     {
-        "sentence": "Nobody was injured in the i___t.",
-        "answer": "incident",
+        "sentence": "While sitting in the waiting room at the dentist's office, I accidentally o___d the receptionist gossiping about another patient's personal medical history, which seemed very unprofessional.",
+        "answer": "overheard",
         "lesson": "6"
     },
     {
-        "sentence": "I accidentally o___d a private conversation.",
-        "answer": "overhear",
-        "lesson": "6"
-    },
-    {
-        "sentence": "She o___d her boss talking about layoffs.",
-        "answer": "overhear",
-        "lesson": "6"
-    },
-    {
-        "sentence": "Let's p___d we are astronauts.",
+        "sentence": "During their imaginative games, the siblings loved to p___d that their backyard was a dangerous jungle full of wild animals, and the family dog was a ferocious lion they had to escape from.",
         "answer": "pretend",
         "lesson": "6"
     },
     {
-        "sentence": "He p___d to be sick to avoid going to school.",
-        "answer": "pretend",
-        "lesson": "6"
-    },
-    {
-        "sentence": "The p___e of education is to develop critical thinking.",
+        "sentence": "The p___e of the new safety regulations is to prevent workplace accidents by requiring all construction workers to wear hard hats, safety goggles, and reflective vests at all times.",
         "answer": "purpose",
         "lesson": "6"
     },
     {
-        "sentence": "He broke the rule on p___e.",
-        "answer": "purpose",
-        "lesson": "6"
-    },
-    {
-        "sentence": "She p___y left her phone at home to avoid calls.",
+        "sentence": "The mischievous child p___y hid his little sister's favorite stuffed animal because he was angry that she had accidentally broken his LEGO castle earlier that morning.",
         "answer": "purposely",
         "lesson": "6"
     },
     {
-        "sentence": "He p___y bumped into me.",
-        "answer": "purposely",
-        "lesson": "6"
-    },
-    {
-        "sentence": "It is r___e to interrupt someone who is speaking.",
+        "sentence": "It is considered extremely r___e in Japanese culture to blow your nose in public, as the noise is seen as disturbing to others and the act is supposed to be done in private instead.",
         "answer": "rude",
         "lesson": "6"
     },
     {
-        "sentence": "The waiter was r___e to us, so we left no tip.",
-        "answer": "rude",
+        "sentence": "The sudden loud crash from the kitchen did not s___e the experienced firefighter at all, but it made his young daughter jump up from the couch and hide behind a pillow.",
+        "answer": "scare",
         "lesson": "6"
     },
     {
-        "sentence": "The loud noise s___ed the cat.",
-        "answer": "scared",
-        "lesson": "6"
-    },
-    {
-        "sentence": "The thought of flying s___es me.",
-        "answer": "scares",
-        "lesson": "6"
-    },
-    {
-        "sentence": "The horror movie was really s___y.",
+        "sentence": "Going to the dentist used to be a s___y experience for me as a child, but now that I am an adult, I have learned to stay calm and trust that the professionals know what they are doing.",
         "answer": "scary",
         "lesson": "6"
     },
     {
-        "sentence": "Walking alone at night can be s___y.",
-        "answer": "scary",
+        "sentence": "The teacher caught the two students s___g at each other across the classroom instead of paying attention to the math lesson, so she made them both stand in the corner for five minutes.",
+        "answer": "staring",
         "lesson": "6"
     },
     {
-        "sentence": "She stared at him for a long time.",
-        "answer": "stare",
-        "lesson": "6"
-    },
-    {
-        "sentence": "It is rude to s___e at people.",
-        "answer": "stare",
-        "lesson": "6"
-    },
-    {
-        "sentence": "The other children used to t___e him about his glasses.",
+        "sentence": "The older kids at the playground would t___e the younger children by calling them names and hiding their backpacks, but a kind teacher noticed and put a stop to their mean behavior.",
         "answer": "tease",
         "lesson": "6"
     },
     {
-        "sentence": "Stop t___ing the dog, or it might bite.",
-        "answer": "tease",
-        "lesson": "6"
-    },
-    {
-        "sentence": "She spoke in a soft w___r so no one else could hear.",
-        "answer": "whisper",
-        "lesson": "6"
-    },
-    {
-        "sentence": "They w___red secrets to each other during class.",
-        "answer": "whispered",
+        "sentence": "During the serious business meeting, two executives kept whispering to each other, and their constant w___ring was so distracting that the boss finally asked them to leave the room.",
+        "answer": "whispering",
         "lesson": "6"
     },
     {
@@ -2760,7 +2335,7 @@
         "lesson": "R2"
     },
     {
-        "sentence": "Emergency landing procedures r___re that passengers remain seated with their seatbelts fastened until the aircraft comes to a complete stop.",
+        "sentence": "Emergency landing procedures r___e that passengers remain seated with their seatbelts fastened until the aircraft comes to a complete stop.",
         "answer": "require",
         "lesson": "R2"
     },
@@ -2815,7 +2390,7 @@
         "lesson": "R2"
     },
     {
-        "sentence": "The ancient temple was supported by twelve enormous marble c__ns, each carved with intricate scenes from mythology.",
+        "sentence": "The ancient temple was supported by twelve enormous marble c___ns, each carved with intricate scenes from mythology.",
         "answer": "columns",
         "lesson": "R2"
     },
@@ -2910,7 +2485,7 @@
         "lesson": "R2"
     },
     {
-        "sentence": "As a shy person, she tended to r___ve her strongest opinions for private conversations rather than sharing them in large groups.",
+        "sentence": "As a shy person, she tended to r___e her strongest opinions for private conversations rather than sharing them in large groups.",
         "answer": "reserve",
         "lesson": "R2"
     },
@@ -2975,22 +2550,22 @@
         "lesson": "R2"
     },
     {
-        "sentence": "Completing the advanced chemistry project will i___ve synthesizing three different compounds and analyzing their molecular structures.",
+        "sentence": "Completing the advanced chemistry project will i___e synthesizing three different compounds and analyzing their molecular structures.",
         "answer": "involve",
         "lesson": "R2"
     },
     {
-        "sentence": "The detective warned that the case might i___ve international cooperation, as the stolen artifacts had been smuggled across several borders.",
+        "sentence": "The detective warned that the case might i___e international cooperation, as the stolen artifacts had been smuggled across several borders.",
         "answer": "involve",
         "lesson": "R2"
     },
     {
-        "sentence": "She did not want to i___ve her parents in the dispute with her landlord, preferring to resolve the issue independently.",
+        "sentence": "She did not want to i___e her parents in the dispute with her landlord, preferring to resolve the issue independently.",
         "answer": "involve",
         "lesson": "R2"
     },
     {
-        "sentence": "Changing the car's oil is a simple maintenance task that does not i___ve specialized tools or advanced mechanical knowledge.",
+        "sentence": "Changing the car's oil is a simple maintenance task that does not i___e specialized tools or advanced mechanical knowledge.",
         "answer": "involve",
         "lesson": "R2"
     },
