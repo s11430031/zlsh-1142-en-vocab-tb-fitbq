@@ -1,267 +1,413 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vocab Challenge | 單字複習挑戰</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>VocabMaster - 英文單字練習</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
-            overflow-x: hidden;
+            background-color: #f8fafc;
+            font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #1e293b;
+            min-height: 100vh;
         }
 
         .glass-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
-        .neon-text-blue { text-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
-
-        input:focus {
-            outline: none;
-            border-color: #38bdf8;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+        .word-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-10px); }
-            75% { transform: translateX(10px); }
+        .btn-hover {
+            transition: all 0.2s;
+        }
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .btn-hover:active {
+            transform: translateY(0);
         }
 
-        .shake { animation: shake 0.2s ease-in-out 0s 2; }
-        
-        .hidden-element { display: none !important; }
+        .progress-bar {
+            height: 6px;
+            border-radius: 3px;
+            background: #e2e8f0;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            transition: width 0.4s ease-out;
+        }
 
-        #fav-list::-webkit-scrollbar { width: 6px; }
-        #fav-list::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+        /* 自定義 Checkbox 樣式 */
+        .custom-checkbox {
+            appearance: none;
+            width: 1.2rem;
+            height: 1.2rem;
+            border: 2px solid #cbd5e1;
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            transition: 0.2s;
+        }
+        .custom-checkbox:checked {
+            background-color: #3b82f6;
+            border-color: #3b82f6;
+        }
+        .custom-checkbox:checked::after {
+            content: "✓";
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.8rem;
+        }
+
+        /* 單字底線動畫 */
+        .blank-highlight {
+            color: #3b82f6;
+            font-weight: 600;
+            border-bottom: 2px solid #93c5fd;
+            padding: 0 2px;
+        }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4">
+<body>
 
-    <div id="game-container" class="w-full max-w-2xl space-y-6">
+<div class="max-w-2xl mx-auto px-4 py-8">
+    
+    <!-- Header -->
+    <header class="text-center mb-8">
+        <h1 class="text-3xl font-bold text-slate-800 tracking-tight">VocabMaster</h1>
+        <p class="text-slate-500 mt-2">精準練習，掌握每一個單字</p>
+    </header>
+
+    <!-- Toolbar -->
+    <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+        <div class="flex gap-2">
+            <button id="shuffleBtn" class="btn-hover flex items-center gap-2 px-4 py-2 bg-white text-slate-700 rounded-xl shadow-sm text-sm font-semibold">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline><polyline points="7.5 19.79 7.5 14.6 3 12"></polyline><polyline points="21 12 16.5 14.6 16.5 19.79"></polyline><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                重新洗牌
+            </button>
+            <button id="favoriteViewBtn" class="btn-hover flex items-center gap-2 px-4 py-2 bg-white text-slate-700 rounded-xl shadow-sm text-sm font-semibold">
+                <span id="favIcon">☆</span>
+                <span id="favText">收藏模式</span>
+            </button>
+        </div>
+        <button id="resetAllBtn" class="btn-hover px-4 py-2 text-slate-400 hover:text-red-500 text-sm font-medium transition-colors">
+            清除所有紀錄
+        </button>
+    </div>
+
+    <!-- Lesson Selection -->
+    <section class="glass-card rounded-2xl p-5 mb-6 shadow-sm">
+        <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">選擇練習課程</h2>
+        <div class="flex flex-wrap gap-4" id="lessonCheckboxes">
+            <!-- Dynamic checkboxes -->
+        </div>
+    </section>
+
+    <!-- Progress -->
+    <div class="mb-4">
+        <div class="flex justify-between items-end mb-2">
+            <span class="text-sm font-bold text-blue-600" id="wordCounter">第 0 / 0 題</span>
+            <span class="text-xs text-slate-400" id="progressPercent">0%</span>
+        </div>
+        <div class="progress-bar">
+            <div id="progressFill" class="progress-fill" style="width: 0%"></div>
+        </div>
+    </div>
+
+    <!-- Main Card Container -->
+    <div id="cardsContainer" class="min-h-[300px]">
+        <!-- Card will be rendered here -->
+    </div>
+
+    <!-- Keyboard Hint -->
+    <p class="text-center text-slate-400 text-xs mt-8">
+        提示：輸入後按「Enter」可快速檢查答案
+    </p>
+</div>
+
+<script>
+// --- 資料處理與狀態管理 ---
+let wordsMaster = [];
+let shuffledWords = [];
+let userAnswers = {};
+let answerStatus = {};
+let currentFilterLessons = new Set();
+let favorites = JSON.parse(localStorage.getItem('favorites') || '{}');
+let currentQuestionIndex = 0;
+let showFavoritesOnly = false;
+
+// 逃逸 HTML
+const escapeHtml = (str) => {
+    if (!str) return '';
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+};
+
+// 洗牌演算法
+const shuffleArray = (arr) => {
+    const newArr = [...arr];
+    for (let i = newArr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+    }
+    return newArr;
+};
+
+function updateShuffledList() {
+    let filtered = wordsMaster.filter(word => currentFilterLessons.has(word.lesson));
+    shuffledWords = shuffleArray(filtered);
+}
+
+function getCurrentWords() {
+    if (!showFavoritesOnly) return shuffledWords;
+    return shuffledWords.filter(word => favorites[word.uid]);
+}
+
+// --- 渲染 UI 組件 ---
+
+function renderLessonCheckboxes(lessons) {
+    const container = document.getElementById('lessonCheckboxes');
+    container.innerHTML = '';
+    lessons.forEach(lesson => {
+        const label = document.createElement('label');
+        label.className = 'flex items-center gap-2 cursor-pointer group';
         
-        <div id="main-card" class="glass-card p-8 md:p-12 shadow-2xl relative overflow-hidden">
-            <div id="feedback" class="absolute top-4 right-8 font-bold text-lg hidden-element"></div>
-
-            <div id="question-box" class="space-y-8">
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center">
-                        <div class="text-sky-400 font-bold text-sm uppercase tracking-widest flex items-center gap-2">
-                            <span class="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></span>
-                            Current Challenge
-                        </div>
-                        <button id="favorite-btn" onclick="toggleFavorite()" class="flex items-center gap-1.5 text-slate-500 hover:text-yellow-400 transition-all group">
-                            <span class="text-[10px] font-bold uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">收藏此題</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="fav-icon">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.382-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                            </svg>
-                        </button>
-                    </div>
-                    
-                    <p id="sentence-display" class="text-xl md:text-2xl leading-relaxed font-semibold text-slate-100">
-                        正在準備連線至資料庫...
-                    </p>
-                    
-                    <div id="correct-answer-display" class="hidden-element p-4 bg-rose-500/10 border border-rose-500/20 rounded-xl">
-                        <p class="text-rose-400 text-sm font-bold uppercase mb-1">Correct Answer:</p>
-                        <p id="correct-word" class="text-2xl text-white font-black tracking-wide"></p>
-                    </div>
-                </div>
-
-                <div class="relative">
-                    <input type="text" id="answer-input" autocomplete="off" placeholder="在此輸入單字..." 
-                        class="w-full bg-slate-900/50 border-2 border-slate-700 p-4 rounded-xl text-lg transition-all text-center">
-                    
-                    <div id="input-hint" class="text-center mt-4 text-slate-500 text-sm">按下 Enter 提交</div>
-                    
-                    <button id="next-btn" onclick="handleNextClick()" class="hidden-element w-full mt-4 bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 rounded-xl transition-all shadow-lg">
-                        繼續下一題
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="glass-card p-6">
-            <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-.181.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-                My Collection (複習清單)
-            </h3>
-            <div id="fav-list" class="max-h-40 overflow-y-auto space-y-2 pr-2">
-                <p class="text-slate-500 text-xs italic text-center py-4">清單將在換題時更新...</p>
-            </div>
-        </div>
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.className = 'custom-checkbox';
+        checkbox.checked = true;
+        checkbox.value = lesson;
         
-        </div>
-
-    <script>
-        let vocabData = [];
-        let favorites = JSON.parse(localStorage.getItem('vocab_favs')) || [];
-        let currentIndex = 0;
-        let isWaitingNext = false;
-
-        const sentenceDisplay = document.getElementById('sentence-display');
-        const answerInput = document.getElementById('answer-input');
-        const mainCard = document.getElementById('main-card');
-        const feedback = document.getElementById('feedback');
-        const correctAnswerDisplay = document.getElementById('correct-answer-display');
-        const correctWord = document.getElementById('correct-word');
-        const nextBtn = document.getElementById('next-btn');
-        const inputHint = document.getElementById('input-hint');
-        const favIcon = document.getElementById('fav-icon');
-        const favListContainer = document.getElementById('fav-list');
-
-        async function loadData() {
-            try {
-                const response = await fetch('example.json');
-                if (!response.ok) throw new Error('無法讀取');
-                vocabData = await response.json();
-                vocabData.sort(() => Math.random() - 0.5);
-                return true; 
-            } catch (error) {
-                sentenceDisplay.innerHTML = `<span class="text-rose-400">載入失敗 (請確認 example.json 存在)</span>`;
-                return false;
-            }
-        }
-
-        async function initGame() {
-            currentIndex = 0;
-            isWaitingNext = false;
-            
-            resetQuestionUI();
-            updateFavListUI(); 
-            
-            const isLoaded = await loadData();
-            if (isLoaded) {
-                showQuestion();
-            }
-        }
-
-        function resetQuestionUI() {
-            answerInput.value = '';
-            answerInput.classList.remove('hidden-element');
-            inputHint.classList.remove('hidden-element');
-            correctAnswerDisplay.classList.add('hidden-element');
-            nextBtn.classList.add('hidden-element');
-            isWaitingNext = false;
-        }
-
-        function showQuestion() {
-            if (vocabData.length === 0) return;
-            const item = vocabData[currentIndex];
-            sentenceDisplay.innerText = item.sentence;
-            
-            const isFav = favorites.some(f => f.sentence === item.sentence);
-            updateStarUI(isFav);
-            answerInput.focus();
-        }
-
-        function updateStarUI(isFav) {
-            favIcon.setAttribute('fill', isFav ? 'currentColor' : 'none');
-            favIcon.classList.toggle('text-yellow-400', isFav);
-        }
-
-        function checkAnswer() {
-            if (vocabData.length === 0 || isWaitingNext) return;
-            const userAnswer = answerInput.value.trim().toLowerCase();
-            const correctObj = vocabData[currentIndex];
-
-            if (userAnswer === correctObj.answer.toLowerCase()) {
-                showFeedback('Correct!', 'text-sky-400 neon-text-blue');
-                
-                updateFavListUI(); 
-                currentIndex = (currentIndex + 1) % vocabData.length;
-                setTimeout(showQuestion, 400);
-                answerInput.value = '';
-            } else {
-                // 答錯僅震動並顯示答案，不再扣 HP
-                mainCard.classList.add('shake');
-                setTimeout(() => mainCard.classList.remove('shake'), 400);
-
-                isWaitingNext = true;
-                correctWord.innerText = correctObj.answer;
-                correctAnswerDisplay.classList.remove('hidden-element');
-                answerInput.classList.add('hidden-element');
-                inputHint.classList.add('hidden-element');
-                nextBtn.classList.remove('hidden-element');
-                nextBtn.focus();
-            }
-        }
-
-        function handleNextClick() {
-            updateFavListUI();
-            resetQuestionUI();
-            currentIndex = (currentIndex + 1) % vocabData.length;
-            showQuestion();
-        }
-
-        function toggleFavorite() {
-            const item = vocabData[currentIndex];
-            const idx = favorites.findIndex(f => f.sentence === item.sentence);
-            
-            if (idx > -1) {
-                favorites.splice(idx, 1);
-                updateStarUI(false);
-                updateFavListUI();
-            } else {
-                favorites.push(item);
-                updateStarUI(true);
-            }
-            localStorage.setItem('vocab_favs', JSON.stringify(favorites));
-        }
-
-        function updateFavListUI() {
-            if (favorites.length === 0) {
-                favListContainer.innerHTML = `<p class="text-slate-500 text-xs italic text-center py-4">尚未收藏任何句子...</p>`;
-                return;
-            }
-            
-            favListContainer.innerHTML = favorites.map((f, i) => `
-                <div class="flex justify-between items-center bg-slate-800/40 p-2.5 rounded-lg text-sm border border-slate-700/50">
-                    <div class="truncate mr-2">
-                        <span class="text-sky-400 font-bold tracking-wide">${f.answer}</span>
-                        <span class="text-slate-400 ml-2 text-xs border-l border-slate-600 pl-2">${f.sentence}</span>
-                    </div>
-                    <button onclick="removeFav(event, ${i})" class="text-slate-500 hover:text-rose-400 transition-colors p-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-            `).join('');
-        }
-
-        window.removeFav = function(e, index) {
-            e.stopPropagation();
-            favorites.splice(index, 1);
-            localStorage.setItem('vocab_favs', JSON.stringify(favorites));
-            updateFavListUI();
-            const item = vocabData[currentIndex];
-            const isStillFav = favorites.some(f => f.sentence === item.sentence);
-            updateStarUI(isStillFav);
-        };
-
-        function showFeedback(text, colorClass) {
-            feedback.innerText = text;
-            feedback.className = `absolute top-4 right-8 font-bold text-lg ${colorClass}`;
-            feedback.classList.remove('hidden-element');
-            setTimeout(() => feedback.classList.add('hidden-element'), 1000);
-        }
-
-        answerInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') checkAnswer();
+        checkbox.addEventListener('change', e => {
+            if (e.target.checked) currentFilterLessons.add(lesson);
+            else currentFilterLessons.delete(lesson);
+            updateShuffledList();
+            currentQuestionIndex = 0;
+            renderCards();
         });
 
-        window.onload = initGame;
-    </script>
+        const span = document.createElement('span');
+        span.className = 'text-sm font-medium text-slate-600 group-hover:text-blue-600 transition-colors';
+        span.textContent = `課程 ${lesson}`;
+
+        label.appendChild(checkbox);
+        label.appendChild(span);
+        container.appendChild(label);
+    });
+}
+
+function renderCards() {
+    const container = document.getElementById('cardsContainer');
+    const words = getCurrentWords();
+    const counterEl = document.getElementById('wordCounter');
+    const progressFill = document.getElementById('progressFill');
+    const progressPercent = document.getElementById('progressPercent');
+
+    if (words.length === 0) {
+        counterEl.textContent = '0 / 0';
+        progressFill.style.width = '0%';
+        progressPercent.textContent = '0%';
+        container.innerHTML = `
+            <div class="glass-card rounded-3xl p-12 text-center shadow-sm">
+                <div class="text-4xl mb-4">Empty</div>
+                <p class="text-slate-500">${showFavoritesOnly ? '目前沒有收藏的單字喔！' : '請至少選擇一個課程進行練習。'}</p>
+            </div>
+        `;
+        return;
+    }
+
+    if (currentQuestionIndex >= words.length) currentQuestionIndex = 0;
+
+    // 更新進度條
+    const progress = ((currentQuestionIndex + 1) / words.length) * 100;
+    counterEl.textContent = `第 ${currentQuestionIndex + 1} / ${words.length} 題`;
+    progressFill.style.width = `${progress}%`;
+    progressPercent.textContent = `${Math.round(progress)}%`;
+
+    const word = words[currentQuestionIndex];
+    const uid = word.uid;
+    const isFav = favorites[uid];
+    const status = answerStatus[uid];
+
+    // 處理句子中的空格樣式
+    const displaySentence = (word.sentence || '').replace(
+        /([a-zA-Z]*_{3,}[a-zA-Z]*)/g, 
+        match => `<span class="blank-highlight">${match}</span>`
+    );
+
+    container.innerHTML = `
+        <div class="word-card glass-card rounded-3xl p-8 shadow-xl relative overflow-hidden">
+            <button id="favoriteBtn" class="absolute top-6 right-6 text-2xl transition-transform active:scale-125 ${isFav ? 'text-yellow-400' : 'text-slate-300 hover:text-yellow-200'}">
+                ${isFav ? '★' : '☆'}
+            </button>
+
+            <div class="mb-4">
+                <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                    Lesson ${word.lesson}
+                </span>
+            </div>
+
+            <div class="sentence text-xl md:text-2xl font-medium text-slate-800 leading-relaxed mb-8">
+                ${displaySentence}
+            </div>
+
+            <div class="space-y-4">
+                <div class="flex flex-col md:flex-row gap-3">
+                    <input 
+                        type="text" 
+                        id="answerInput" 
+                        class="flex-1 px-5 py-4 rounded-2xl border-2 border-slate-100 focus:border-blue-400 focus:ring-4 focus:ring-blue-50 outline-none transition-all text-lg font-semibold"
+                        placeholder="在此輸入答案..."
+                        value="${escapeHtml(userAnswers[uid] || '')}"
+                        autocomplete="off"
+                    >
+                    <button id="checkBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-blue-200 active:scale-95">
+                        檢查
+                    </button>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <div id="feedback" class="text-sm font-bold flex items-center gap-2 ${status === 'correct' ? 'text-emerald-500' : status === 'incorrect' ? 'text-red-500' : 'text-slate-400'}">
+                        ${status === 'correct' ? '<span>✓</span> 太棒了！回答正確' : status === 'incorrect' ? '<span>✕</span> 再試一次，加油！' : '<span>✎</span> 請輸入單字'}
+                    </div>
+                    <button id="showAnswerBtn" class="text-xs font-semibold text-slate-400 hover:text-slate-600 underline decoration-dotted">
+                        偷看答案
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex justify-between mt-10 pt-6 border-t border-slate-50">
+                <button id="prevBtn" class="flex items-center gap-2 text-slate-500 hover:text-slate-800 font-semibold transition-colors ${currentQuestionIndex === 0 ? 'opacity-0 pointer-events-none' : ''}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    上一題
+                </button>
+                <button id="nextBtn" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-bold transition-colors">
+                    ${currentQuestionIndex === words.length - 1 ? '從頭開始' : '下一題'}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+            </div>
+        </div>
+    `;
+
+    // 重新綁定事件
+    const input = document.getElementById('answerInput');
+    input.focus();
+    
+    input.addEventListener('input', e => {
+        userAnswers[uid] = e.target.value;
+        answerStatus[uid] = null;
+    });
+
+    input.addEventListener('keydown', e => {
+        if (e.key === 'Enter') document.getElementById('checkBtn').click();
+    });
+
+    document.getElementById('checkBtn').onclick = () => {
+        const isCorrect = input.value.trim().toLowerCase() === word.answer.trim().toLowerCase();
+        answerStatus[uid] = isCorrect ? 'correct' : 'incorrect';
+        renderCards();
+    };
+
+    document.getElementById('showAnswerBtn').onclick = () => {
+        input.value = word.answer;
+        userAnswers[uid] = word.answer;
+        input.focus();
+    };
+
+    document.getElementById('favoriteBtn').onclick = () => {
+        favorites[uid] = !favorites[uid];
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        renderCards();
+    };
+
+    document.getElementById('prevBtn').onclick = () => {
+        if (currentQuestionIndex > 0) {
+            currentQuestionIndex--;
+            renderCards();
+        }
+    };
+
+    document.getElementById('nextBtn').onclick = () => {
+        if (currentQuestionIndex < words.length - 1) {
+            currentQuestionIndex++;
+        } else {
+            currentQuestionIndex = 0; // 循環
+        }
+        renderCards();
+    };
+}
+
+// --- 初始化與資料讀取 ---
+
+async function init() {
+    try {
+        const response = await fetch('word.json');
+        if (!response.ok) throw new Error('File not found');
+        const data = await response.json();
+        wordsMaster = data.map((word, index) => ({
+            ...word,
+            uid: `word_${index}`,
+            sentence: word.sentence || ''
+        }));
+    } catch (err) {
+        console.warn("無法讀取 word.json，載入範例資料中...");
+        // 範例模擬資料
+        wordsMaster = [
+            { lesson: "1", answer: "apple", sentence: "I eat an _____ every morning.", uid: "w1" },
+            { lesson: "1", answer: "banana", sentence: "The monkey is peeling a _____.", uid: "w2" },
+            { lesson: "2", answer: "cat", sentence: "The _____ is sleeping on the mat.", uid: "w3" },
+            { lesson: "2", answer: "dog", sentence: "My _____ loves to bark at mailmen.", uid: "w4" }
+        ];
+    }
+
+    const lessons = [...new Set(wordsMaster.map(w => w.lesson))].sort((a,b) => a-b);
+    lessons.forEach(l => currentFilterLessons.add(l));
+
+    renderLessonCheckboxes(lessons);
+    updateShuffledList();
+    renderCards();
+}
+
+// 全域控制按鈕
+document.getElementById('shuffleBtn').onclick = () => {
+    updateShuffledList();
+    currentQuestionIndex = 0;
+    renderCards();
+};
+
+document.getElementById('favoriteViewBtn').onclick = () => {
+    showFavoritesOnly = !showFavoritesOnly;
+    currentQuestionIndex = 0;
+    document.getElementById('favText').textContent = showFavoritesOnly ? '全部模式' : '收藏模式';
+    document.getElementById('favIcon').textContent = showFavoritesOnly ? '★' : '☆';
+    document.getElementById('favoriteViewBtn').classList.toggle('bg-yellow-50', showFavoritesOnly);
+    renderCards();
+};
+
+document.getElementById('resetAllBtn').onclick = () => {
+    if(confirm("確定要重設所有輸入嗎？")) {
+        userAnswers = {};
+        answerStatus = {};
+        renderCards();
+    }
+};
+
+init();
+</script>
+
 </body>
 </html>
